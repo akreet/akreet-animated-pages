@@ -58,6 +58,7 @@
                     if (detail.fromPage.reset) {
                         this.async(function () {
                             detail.fromPage.reset();
+                            this.fire('from-page-reset');
                         }.bind(this));
                     }
 
@@ -65,9 +66,12 @@
                     if (detail.toPage.init) {
                         this.async(function () {
                             detail.toPage.init();
+                            this.fire('to-page-init');
                         }.bind(this));
                     }
                 }
+
+                this.fire('transition-end')
             },
 
             _onSelectedChanged: function (newValue, oldValue) {
