@@ -11,6 +11,7 @@
                              attr-for-selected="name"
                              entry-animation="[[entryAnimation]]"
                              exit-animation="[[exitAnimation]]"
+                             animate-initial-selection="[[animateInitialSelection]]"
                              on-neon-animation-finish="_onTransitionEnd">
             <content></content>
         </neon-animated-pages>
@@ -39,6 +40,10 @@
                 exitAnimation: {
                     type: String,
                     value: null
+                },
+                animateInitialSelection: {
+                    type: Boolean,
+                    value: false
                 }
             },
 
